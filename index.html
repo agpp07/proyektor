@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fujiyama Restaurant000</title>
+    <title>Fujiyama Restaurant</title>
     
 <!-- Poppins-->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -46,12 +46,11 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <!-- Ganti teks dengan gambar logo -->
+        <!-- Logo dan Teks Fujiyama -->
         <a class="navbar-brand" href="#">
             <img src="gambar/logo.png" alt="Fujiyama Logo" class="navbar-logo">
-            <span class="navbar-text">Fujiyama</span>
+            <span class="navbar-brand-text">Fujiyama</span>
         </a>
-        
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -70,7 +69,6 @@
         </div>
     </div>
 </nav>
-
 <!-- Selamat Datang Section -->
 <header id="selamat-datang" class="hero">
     <div class="container text-center">
@@ -80,18 +78,17 @@
         <!-- Tombol Lihat Menu -->
         <a href="#kategori-makanan" class="btn lihat-menu">Lihat Menu</a>
     </div>
+    <!-- Div untuk animasi bunga sakura -->
+    <div id="sakura-container"></div>
 </header>
 
-<!-- Tentang Restoran Fujiyama Section -->
 <section id="tentang-restoran" class="about-restaurant">
     <div class="container text-center">
         <h2>TENTANG RESTAURANT FUJIYAMA</h2>
         <div class="row">
-            <!-- Gambar Restoran -->
             <div class="col-md-6">
                 <img src="gambar/fujiyama.jpg" alt="Restoran Fujiyama" class="img-fluid about-img">
             </div>
-            <!-- Deskripsi Restoran -->
             <div class="col-md-6">
                 <p>Fujiyama Restaurant adalah tempat makan yang menyajikan berbagai macam masakan khas Jepang dengan cita rasa yang autentik. Terletak di jantung kota, kami menawarkan pengalaman kuliner yang tak terlupakan, dengan suasana yang nyaman dan pelayanan yang ramah. Nikmati hidangan sushi segar, ramen lezat, tempura renyah, dan banyak lagi. Kami berkomitmen untuk menyajikan masakan Jepang berkualitas tinggi dengan bahan-bahan terbaik dan resep tradisional yang sudah teruji waktu. Datang dan rasakan pengalaman baru dalam setiap suapan!</p>
             </div>
@@ -99,85 +96,81 @@
     </div>
 </section>
 
-<!-- Kategori Makanan Section -->
 <section id="kategori-makanan" class="kategori-section">
     <div class="container">
         <h2 class="section-title">Kategori Makanan & Minuman</h2>
-        <!-- Swiper Container -->
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <!-- Card 1: Makanan 1 -->
+                <!-- Card 1: Appetizer -->
                 <div class="swiper-slide">
                     <div class="flip-card">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="gambar/avocadosushi.jpg" alt="Makanan 1">
+                                <img src="gambar/avocadosushi.jpg" alt="Avocado Sushi">
                                 <h3>Appetizer</h3>
                             </div>
                             <div class="flip-card-back">
-                              
-                              <h3>Avocado Sushi</h3>
-                                <p>Sushi roll dengan isian kyuri (mentimun jepang) dan kani (daging kepiting), dibalut dengan nasi putih serta topping irisan alpukat yang lembut. Bagian atasnya dihias untuk memberikan tampilan elegan dan rasa yang kaya.  </p>
+                                <h3>Avocado Sushi</h3>
+                                <p>Sushi roll dengan isian kyuri (mentimun jepang) dan kani (daging kepiting), dibalut dengan nasi putih serta topping irisan alpukat yang lembut. Bagian atasnya dihias untuk memberikan tampilan elegan dan rasa yang kaya.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Card 2: Makanan 2 -->
+                <!-- Card 2: Soup -->
                 <div class="swiper-slide">
                     <div class="flip-card">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="gambar/misosoupbaru.jpg" alt="Makanan 2">
+                                <img src="gambar/misosoupbaru.jpg" alt="Miso Soup">
                                 <h3>Soup</h3>
                             </div>
                             <div class="flip-card-back">
                                 <h3>Miso Soup</h3>
-                                <p>Semangkuk sup miso yang hangat, berisi potongan tahu lembut dan lembaran nori (rumput laut), menciptakan perpaduan rasa gurih dan tekstur yang ringan, khas masakan jepang. </p>
+                                <p>Semangkuk sup miso yang hangat, berisi potongan tahu lembut dan lembaran nori (rumput laut), menciptakan perpaduan rasa gurih dan tekstur yang ringan, khas masakan jepang.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Card 3: Makanan 3 -->
+                <!-- Card 3: Main Course -->
                 <div class="swiper-slide">
                     <div class="flip-card">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="gambar/tepanyaki.jpeg" alt="Makanan 3">
+                                <img src="gambar/tepanyaki.jpeg" alt="Tepanyaki">
                                 <h3>Main Course</h3>
                             </div>
                             <div class="flip-card-back">
-                              <h3>Tepanyaki</h3>
+                                <h3>Tepanyaki</h3>
                                 <p>Nasi goreng dengan campuran sayuran seperti wortel, jagung, kacang polong, dan paprika, ditambah dengan potongan ayam teriyaki yang dipanggang hingga kecokelatan.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Card 4: Makanan 4 -->
+                <!-- Card 4: Dessert -->
                 <div class="swiper-slide">
                     <div class="flip-card">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="gambar/cheesecake.jpeg" alt="Makanan 4">
+                                <img src="gambar/cheesecake.jpeg" alt="Japanese Cheesecake">
                                 <h3>Dessert</h3>
                             </div>
                             <div class="flip-card-back">
-                               <h3>Japanese Cheesecake</h3>
+                                <h3>Japanese Cheesecake</h3>
                                 <p>Kue keju jepang yang lembut dan ringan dengan tekstur yang airy. Bagian atasnya sedikit karamelisasi, sementara bagian dalamnya creamy dengan rasa keju yang lembut.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Card 5: Minuman -->
+                <!-- Card 5: Beverage -->
                 <div class="swiper-slide">
                     <div class="flip-card">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="gambar/cucumberstrawberry.jpg" alt="Minuman">
+                                <img src="gambar/cucumberstrawberry.jpg" alt="Cocktail Cucumber Strawberry Mojito">
                                 <h3>Beverage</h3>
                             </div>
                             <div class="flip-card-back">
-                          <h3>Cocktail Cucumber Strawberry Mojito</h3>
+                                <h3>Cocktail Cucumber Strawberry Mojito</h3>
                                 <p>Minuman dengan campuran irisan mentimun, stroberi, daun mint, jeruk nipis, simple syrup, dan air soda putih/sprite. Disajikan dalam gelas tinggi berisi es batu, menciptakan keseimbangan rasa manis, asam, dan menyegarkan.</p>
                             </div>
                         </div>
@@ -200,21 +193,27 @@
 
         <!-- Kategori: Appetizer -->
         <div class="menu-category">
-            <div class="sakura-border">
-                <h3 class="category-title">Appetizer</h3>
-            </div>
-            <div class="menu-item">
-                <img src="gambar/avocadosushi.jpg" alt="Avocado Sushi">
-                <div class="menu-details">
-                    <h4>Avocado Sushi</h4>
-                    <p>Sushi roll dengan isian kyuri (mentimun jepang) dan kani (daging kepiting), dibalut dengan nasi putih serta topping irisan alpukat yang lembut. Bagian atasnya dihias untuk memberikan tampilan elegan dan rasa yang kaya.</p>
+<div class="sakura-border">
+    <h3 class="category-title">Appetizer</h3>
+    <div class="sakura-petal"></div>
+    <div class="sakura-petal"></div>
+    <div class="sakura-petal"></div>
+    <div class="sakura-petal"></div>
+</div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="gambar/avocadosushi.jpg" alt="Avocado Sushi">
+                    <div class="menu-details">
+                        <h4>Avocado Sushi</h4>
+                        <p>Sushi roll dengan isian kyuri (mentimun jepang) dan kani (daging kepiting), dibalut dengan nasi putih serta topping irisan alpukat yang lembut. Bagian atasnya dihias untuk memberikan tampilan elegan dan rasa yang kaya.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="menu-item">
-                <img src="gambar/takoyaki.jpg" alt="Takoyaki">
-                <div class="menu-details">
-                    <h4>Takoyaki</h4>
-                    <p>Bola-bola adonan gurih berisi potongan gurita, dimasak hingga bagian luarnya renyah namun tetap lembut di dalam. Disajikan dengan saus khas, mayones, dan taburan bonito flakes yang memberikan rasa umami yang khas.</p>
+                <div class="menu-item">
+                    <img src="gambar/takoyaki.jpg" alt="Takoyaki">
+                    <div class="menu-details">
+                        <h4>Takoyaki</h4>
+                        <p>Bola-bola adonan gurih berisi potongan gurita, dimasak hingga bagian luarnya renyah namun tetap lembut di dalam. Disajikan dengan saus khas, mayones, dan taburan bonito flakes yang memberikan rasa umami yang khas.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -223,12 +222,18 @@
         <div class="menu-category">
             <div class="sakura-border">
                 <h3 class="category-title">Soup</h3>
+    <div class="sakura-petal"></div>
+    <div class="sakura-petal"></div>
+    <div class="sakura-petal"></div>
+    <div class="sakura-petal"></div>
             </div>
-            <div class="menu-item">
-                <img src="gambar/misosoupbaru.jpg" alt="Miso Soup">
-                <div class="menu-details">
-                    <h4>Miso Soup</h4>
-                    <p>Semangkuk sup miso yang hangat, berisi potongan tahu lembut dan lembaran nori (rumput laut), menciptakan perpaduan rasa gurih dan tekstur yang ringan, khas masakan jepang.</p>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="gambar/misosoupbaru.jpg" alt="Miso Soup">
+                    <div class="menu-details">
+                        <h4>Miso Soup</h4>
+                        <p>Semangkuk sup miso yang hangat, berisi potongan tahu lembut dan lembaran nori (rumput laut), menciptakan perpaduan rasa gurih dan tekstur yang ringan, khas masakan jepang.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -237,12 +242,18 @@
         <div class="menu-category">
             <div class="sakura-border">
                 <h3 class="category-title">Main Course</h3>
+    <div class="sakura-petal"></div>
+    <div class="sakura-petal"></div>
+    <div class="sakura-petal"></div>
+    <div class="sakura-petal"></div>
             </div>
-            <div class="menu-item">
-                <img src="gambar/tepanyaki.jpeg" alt="Tepanyaki">
-                <div class="menu-details">
-                    <h4>Tepanyaki</h4>
-                    <p>Nasi goreng dengan campuran sayuran seperti wortel, jagung, kacang polong, dan paprika, ditambah dengan potongan ayam teriyaki yang dipanggang hingga kecokelatan. Perpaduan rasa gurih, manis, dan sedikit smoky dari ayam menciptakan cita rasa yang lezat.</p>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="gambar/tepanyaki.jpeg" alt="Tepanyaki">
+                    <div class="menu-details">
+                        <h4>Tepanyaki</h4>
+                        <p>Nasi goreng dengan campuran sayuran seperti wortel, jagung, kacang polong, dan paprika, ditambah dengan potongan ayam teriyaki yang dipanggang hingga kecokelatan. Perpaduan rasa gurih, manis, dan sedikit smoky dari ayam menciptakan cita rasa yang lezat.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -251,12 +262,18 @@
         <div class="menu-category">
             <div class="sakura-border">
                 <h3 class="category-title">Dessert</h3>
+    <div class="sakura-petal"></div>
+    <div class="sakura-petal"></div>
+    <div class="sakura-petal"></div>
+    <div class="sakura-petal"></div>
             </div>
-            <div class="menu-item">
-                <img src="gambar/cheesecake.jpeg" alt="Japanese Cheesecake">
-                <div class="menu-details">
-                    <h4>Japanese Cheesecake</h4>
-                    <p>Kue keju jepang yang lembut dan ringan dengan tekstur yang airy. Bagian atasnya sedikit karamelisasi, sementara bagian dalamnya creamy dengan rasa keju yang lembut. Taburan gula halus dan topping buah segar menambah sentuhan manis yang seimbang.</p>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="gambar/cheesecake.jpeg" alt="Japanese Cheesecake">
+                    <div class="menu-details">
+                        <h4>Japanese Cheesecake</h4>
+                        <p>Kue keju jepang yang lembut dan ringan dengan tekstur yang airy. Bagian atasnya sedikit karamelisasi, sementara bagian dalamnya creamy dengan rasa keju yang lembut. Taburan gula halus dan topping buah segar menambah sentuhan manis yang seimbang.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -265,39 +282,44 @@
         <div class="menu-category">
             <div class="sakura-border">
                 <h3 class="category-title">Minuman</h3>
+    <div class="sakura-petal"></div>
+    <div class="sakura-petal"></div>
+    <div class="sakura-petal"></div>
+    <div class="sakura-petal"></div>
             </div>
-            <div class="menu-item">
-                <img src="gambar/cucumberstrawberry.jpg" alt="Cocktail Cucumber Strawberry Mojito">
-                <div class="menu-details">
-                    <h4>Cocktail Cucumber Strawberry Mojito</h4>
-                    <p>Minuman segar dengan campuran irisan mentimun, stroberi, daun mint, jeruk nipis, simple syrup, dan air soda putih/sprite. Disajikan dalam gelas tinggi berisi es batu, menciptakan keseimbangan rasa manis, asam, dan menyegarkan.</p>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="gambar/cucumberstrawberry.jpg" alt="Cocktail Cucumber Strawberry Mojito">
+                    <div class="menu-details">
+                        <h4>Cocktail Cucumber Strawberry Mojito</h4>
+                        <p>Minuman segar dengan campuran irisan mentimun, stroberi, daun mint, jeruk nipis, simple syrup, dan air soda putih/sprite. Disajikan dalam gelas tinggi berisi es batu, menciptakan keseimbangan rasa manis, asam, dan menyegarkan.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="menu-item">
-                <img src="gambar/cocopandan.jpg" alt="Orange Cocopandan Sparkle">
-                <div class="menu-details">
-                    <h4>Orange Cocopandan Sparkle</h4>
-                    <p>Minuman berlapis cantik dengan gradasi merah dan oranye dari campuran syrup merah, syrup jeruk, dan air soda putih/sprite. Dilengkapi es batu dan irisan lemon kering sebagai hiasan, memberikan tampilan yang elegan dan rasa tropis.</p>
+                <div class="menu-item">
+                    <img src="gambar/cocopandan.jpg" alt="Orange Cocopandan Sparkle">
+                    <div class="menu-details">
+                        <h4>Orange Cocopandan Sparkle</h4>
+                        <p>Minuman berlapis cantik dengan gradasi merah dan oranye dari campuran syrup merah, syrup jeruk, dan air soda putih/sprite. Dilengkapi es batu dan irisan lemon kering sebagai hiasan, memberikan tampilan yang elegan dan rasa tropis.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="menu-item">
-                <img src="gambar/bluelagon.jpg" alt="Cocktail Blue Lagon">
-                <div class="menu-details">
-                    <h4>Cocktail Blue Lagon</h4>
-                    <p>Minuman segar berwarna biru cerah dari perpaduan blue curacao, simple syrup, dan air soda putih/sprite. Dihidangkan dalam gelas dengan es batu, dihiasi dengan irisan jeruk nipis dan daun mint, memberikan sensasi rasa manis dan segar.</p>
+                <div class="menu-item">
+                    <img src="gambar/bluelagon.jpg" alt="Cocktail Blue Lagon">
+                    <div class="menu-details">
+                        <h4>Cocktail Blue Lagon</h4>
+                        <p>Minuman segar berwarna biru cerah dari perpaduan blue curacao, simple syrup, dan air soda putih/sprite. Dihidangkan dalam gelas dengan es batu, dihiasi dengan irisan jeruk nipis dan daun mint, memberikan sensasi rasa manis dan segar.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="menu-item">
-                <img src="gambar/greentea.jpg" alt="Green Tea">
-                <div class="menu-details">
-                    <h4>Green Tea</h4>
-                    <p>Secangkir teh hijau segar dengan warna hijau kekuningan yang menenangkan, disajikan dalam cangkir putih minimalis. Rasanya ringan dengan aroma khas yang menyejukkan, cocok untuk dinikmati saat santai.</p>
+                <div class="menu-item">
+                    <img src="gambar/greentea.jpg" alt="Green Tea">
+                    <div class="menu-details">
+                        <h4>Green Tea</h4>
+                        <p>Secangkir teh hijau segar dengan warna hijau kekuningan yang menenangkan, disajikan dalam cangkir putih minimalis. Rasanya ringan dengan aroma khas yang menyejukkan, cocok untuk dinikmati saat santai.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 <!-- Footer Section -->
 <footer id="footer" class="bg-pink text-white py-5">
     <div class="container">
@@ -351,6 +373,12 @@
         </div>
     </div>
 </footer>
+
+<!-- Audio untuk background music -->
+<audio id="background-music" autoplay loop>
+    <source src="gambar/japanmusic.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung elemen audio.
+</audio>
 
     
     <!-- AOS JS -->

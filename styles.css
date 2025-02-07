@@ -3,138 +3,148 @@
     padding: 0;
 }
 
+
+/* Atur gambar latar belakang pada body */
 body {
     font-family: 'Noto Serif JP', serif;
     color: #FF69B4;
     position: relative;
     overflow-x: hidden;
     line-height: 1.6;
+    background-image: url('gambar/bg.jpeg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    margin-top: 60px; 
 }
 
-/* Hapus overlay dan blur, biarkan background asli tampil */
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+
+html, body {
+    overflow-x: hidden; 
     width: 100%;
-    height: 100%;
-    background-image: url('gambar/bg.jpeg');
-    background-size: cover;
-    background-position: center;
-    z-index: -1; /* Letakkan di belakang konten */
+    max-width: 100%;
 }
 
-/* Hapus body::after karena tidak perlu overlay */
-body::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* Transparan, tidak ada overlay */
-    z-index: -1;
-}
 
 /* Navbar */
 .navbar {
-    background-color: #FF69B4 !important; /* Warna merah muda */
+    background-color: rgba(255, 105, 180, 1) !important; 
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px 0; /* Padding diperkecil */
+    padding: 10px 0;
+    transition: background-color 0.3s ease;
 }
 
-/* Logo Navbar */
-.navbar-logo {
-    height: 50px; /* Ukuran logo default */
-    width: auto;
-    margin-right: 10px; /* Jarak antara logo dan teks */
-    transition: all 0.3s ease; /* Menambahkan efek saat navbar diklik atau ukuran berubah */
+/* Navbar saat di-scroll */
+.navbar.scrolled {
+background-color: rgba(0, 0, 0, 0.5) !important;
+
 }
 
-/* Teks Navbar */
-.navbar-text {
-    color: white !important; /* Teks navbar putih */
-    font-family: 'Noto Serif JP', serif; /* Font Jepang */
-    font-size: 2.0rem; /* Ukuran teks diperbesar */
-    line-height: 50px; /* Menjaga teks sejajar dengan logo */
-    display: inline-block; /* Agar teks dan logo berada dalam satu baris */
+/* Teks Fujiyama di sebelah logo */
+.navbar-brand-text {
+    color: white;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.5rem;
+    margin-left: 10px;
+    transition: all 0.3s ease;
 }
 
 /* Konten utama */
 .container {
     position: relative;
-    z-index: 1; /* Pastikan konten berada di atas background */
+    z-index: 1;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 80px;
 }
 
 /* Menambahkan margin atas pada konten agar tidak tertutupi navbar */
 body {
-    margin-top: 60px; /* Sesuaikan dengan tinggi navbar yang lebih kecil */
+    margin-top: 60px;
 }
 
 /* Teks dan link navbar */
+.navbar .navbar-brand,
 .navbar .navbar-nav .nav-link {
-    color: white !important; /* Teks navbar putih */
-    font-family: 'Noto Serif JP', serif; /* Font Jepang */
-    font-size: 1.2rem; /* Ukuran teks diperkecil */
-    padding: 8px 15px; /* Padding diperkecil */
-    transition: all 0.3s ease; /* Efek transisi */
+    color: white !important;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.2rem;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
 }
 
 .navbar .navbar-nav .nav-link:hover {
-    color: #FFD700 !important; /* Warna emas untuk efek hover */
-    transform: scale(1.1); /* Efek zoom saat hover */
+    color: #FFD700 !important;
+    transform: scale(1.1);
+}
+
+.navbar-toggler-icon {
+    background-color: #FF69B4;
+}
+
+/* Logo Navbar */
+.navbar-logo {
+    height: 50px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.1);
 }
 
 /* Styling khusus untuk desktop (layar lebih besar dari 768px) */
 @media (min-width: 769px) {
     .navbar {
-        padding: 0px 0; /* Tinggi Navbar diperbesar */
+        padding: 0px 0;
     }
 
     .navbar .navbar-brand,
     .navbar .navbar-nav .nav-link {
-        font-size: 1.5rem; /* Ukuran teks diperbesar */
-        padding: 10px 20px; /* Padding diperbesar */
+        font-size: 1.5rem;
+        padding: 10px 20px;
+    }
+
+    .navbar .navbar-nav .nav-link:hover {
+        transform: scale(1.1);
     }
 
     .navbar-logo {
-        height: 80px; /* Ukuran logo diperbesar */
+        height: 80px;
     }
 }
 
 /* Styling khusus untuk mobile (layar lebih kecil dari 768px) */
 @media (max-width: 768px) {
     .navbar-logo {
-        height: 50px; /* Ukuran logo diperkecil */
+        height: 50px;
     }
 
     .navbar-collapse {
-        background-color: #FF69B4; /* Warna latar belakang pada menu mobile */
+        background-color: #FF69B4;
     }
 
-    /* Mengatur agar menu tidak terpusat dan berada di kiri */
     .navbar-nav {
         display: flex;
-        flex-direction: column; /* Menyusun item secara vertikal */
-        align-items: flex-start; /* Menjaga menu berada di kiri */
-        padding-left: 15px; /* Menambahkan padding kiri */
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 15px;
     }
 
     .navbar-nav .nav-item {
-        width: 100%; /* Membuat setiap item menu memiliki lebar penuh */
+        width: 100%;
     }
 
     .navbar-nav .nav-link {
-        color: white !important; /* Teks menu di mobile tetap putih */
-        text-align: left; /* Membuat teks berada di kiri */
-        font-size: 1rem; /* Ukuran teks diperkecil */
-        padding: 8px 10px; /* Padding diperkecil */
+        color: white !important;
+        text-align: left;
+        font-size: 1rem;
+        padding: 8px 10px;
     }
 
     .navbar-toggler {
@@ -142,28 +152,35 @@ body {
     }
 }
 
+
 /* Selamat Datang Section */
 #selamat-datang {
-    padding: 150px 20px; /* Padding diperbesar untuk desktop */
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    height: 100vh;
+    padding: 0 20px;
+    background: rgba(0, 0, 0, 0.7);
     color: white;
     text-align: center;
-    margin-top: 60px; /* Menambahkan margin-top untuk menghindari tumpang tindih dengan navbar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    overflow: hidden; 
 }
 
 .header-title {
     font-family: 'Noto Serif JP', serif; /* Font Jepang */
-    font-size: 3rem; /* Ukuran font lebih kecil untuk desktop */
+    font-size: 3rem; 
     animation: fadeIn 2s ease-in-out;
-    margin-bottom: 20px; /* Memberikan jarak antara judul */
-    line-height: 1.2; /* Menyesuaikan line-height agar teks tidak terpotong */
+    margin-bottom: 20px; 
+    line-height: 1.2; 
 }
 
 .header-subtitle {
     font-family: 'Noto Serif JP', serif; /* Font Jepang */
     font-size: 1.5rem;
     animation: fadeIn 3s ease-in-out;
-    margin-bottom: 30px; /* Memberikan jarak antara paragraf dan tombol */
+    margin-bottom: 30px; 
 }
 
 /* Tombol Lihat Menu */
@@ -171,53 +188,82 @@ body {
     font-family: 'Noto Serif JP', serif; /* Font Jepang */
     font-size: 1.2rem;
     padding: 12px 30px;
-    background-color: #FF69B4; /* Hot Pink */
-    color: white; /* Teks putih */
-    border: 2px solid #FF69B4; /* Border sesuai warna tombol */
-    border-radius: 20px; /* Membuat tombol melengkung */
+    background-color: #FF69B4; 
+    color: white; 
+    border: 2px solid #FF69B4; 
+    border-radius: 20px; 
     text-decoration: none;
-    transition: all 0.3s ease; /* Animasi smooth */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
 .lihat-menu:hover {
-    background-color: #FF1493; /* Ubah warna tombol saat hover */
-    border-color: #FF1493; /* Ganti border saat hover */
-    color: white; /* Tetap putih saat hover */
-    transform: scale(1.1); /* Efek zoom saat hover */
+    background-color: #FF1493; 
+    border-color: #FF1493; 
+    color: white; 
+    transform: scale(1.1); 
 }
 
 .lihat-menu:focus {
-    outline: none; /* Hilangkan outline saat fokus */
+    outline: none; 
 }
 
 .lihat-menu:active {
-    background-color: #FF1493; /* Warna saat tombol diklik */
-    color: white; /* Teks tetap putih */
+    background-color: #FF1493; 
+    color: white; 
 }
 
 /* Responsif pada tampilan mobile */
 @media (max-width: 768px) {
     #selamat-datang {
-        padding: 100px 20px; /* Mengurangi padding untuk tampilan mobile */
+        padding: 0 20px; 
     }
 
     .header-title {
-        font-size: 2rem; /* Ukuran font lebih kecil untuk mobile */
-        margin-bottom: 15px; /* Jarak yang lebih kecil antara judul */
+        font-size: 2rem; 
+        margin-bottom: 15px; 
     }
 
     .header-subtitle {
-        font-size: 1.2rem; /* Ukuran font lebih kecil untuk mobile */
-        margin-bottom: 20px; /* Jarak yang lebih kecil antara paragraf dan tombol */
+        font-size: 1.2rem; 
+        margin-bottom: 20px;
     }
 
     .lihat-menu {
-        font-size: 1rem; /* Ukuran font tombol lebih kecil untuk mobile */
-        padding: 10px 20px; /* Padding tombol lebih kecil untuk mobile */
+        font-size: 1rem; 
+        padding: 10px 20px; 
     }
-} 
+}
 
+/* Animasi Bunga Sakura */
+@keyframes fall {
+    0% {
+        transform: translateY(-10%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+}
+
+.sakura {
+    position: absolute;
+    top: -50px;
+    width: 30px;
+    height: 30px;
+    background-image: url('gambar/sakura-petal.png');
+    background-size: cover;
+    animation: fall linear infinite;
+}
+
+/* Responsif pada tampilan mobile */
+@media (max-width: 768px) {
+    .sakura {
+        width: 20px;
+        height: 20px;
+    }
+}
 
 /* Import font Poppins dari Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
@@ -225,41 +271,41 @@ body {
 /* Tentang Restoran Fujiyama */
 #tentang-restoran {
     padding: 50px 0;
-    background-color: #f1f1f1;
-    font-family: 'Poppins', sans-serif; /* Gunakan font Poppins */
+    background: rgba(0, 0, 0, 0.6); 
+    font-family: 'Poppins', sans-serif;
+    color: white; 
 }
 
 #tentang-restoran h2 {
     font-size: 2.5rem;
-    color: #000000; /* Warna hitam */
     margin-bottom: 30px;
-    font-weight: 600; /* Tebal untuk judul */
+    font-weight: 600;
+    text-align: center;
 }
 
 #tentang-restoran p {
-    color: #000000; /* Warna hitam untuk paragraf */
     font-size: 1rem;
-    line-height: 1.8; /* Jarak antar baris untuk keterbacaan */
-    text-align: justify; /* Rata kiri-kanan */
+    line-height: 1.8;
+    text-align: justify;
+    color: white; /* Warna teks putih */
 }
 
-/* Gambar restoran */
 .about-img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan untuk gambar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsif pada tampilan mobile */
 @media (max-width: 768px) {
     #tentang-restoran h2 {
-        font-size: 2rem; /* Ukuran font lebih kecil di mobile */
+        font-size: 2rem; 
     }
 
     #tentang-restoran p {
-        font-size: 0.9rem; /* Ukuran font lebih kecil di mobile */
-        text-align: left; /* Rata kiri di mobile */
+        font-size: 0.9rem; 
+        text-align: justify;
     }
 
     .about-img {
@@ -270,19 +316,19 @@ body {
 /* Hero section (jika diperlukan) */
 .hero {
     padding: 100px 20px;
-    background: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
-    font-family: 'Poppins', sans-serif; /* Gunakan font Poppins */
+    background: rgba(0, 0, 0, 0.4); 
+    font-family: 'Poppins', sans-serif; 
 }
 
 .hero h1 {
     font-size: 3rem;
-    color: #ffffff; /* Warna putih untuk kontras */
+    color: #ffffff; 
     animation: fadeIn 2s ease-in-out;
 }
 
 .hero p {
     font-size: 1.5rem;
-    color: #ffffff; /* Warna putih untuk kontras */
+    color: #ffffff; 
     animation: fadeIn 3s ease-in-out;
 }
 
@@ -291,125 +337,182 @@ body {
 .lihat-menu {
     font-size: 1.2rem;
     padding: 12px 30px;
-    background-color: #FF69B4; /* Hot Pink */
-    color: white; /* Teks putih */
-    border: 2px solid #FF69B4; /* Border sesuai warna tombol */
-    border-radius: 20px; /* Membuat tombol melengkung */
+    background-color: #FF69B4; 
+    color: white; 
+    border: 2px solid #FF69B4; 
+    border-radius: 20px; 
     text-decoration: none;
-    transition: all 0.3s ease; /* Animasi smooth */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
 .lihat-menu:hover {
-    background-color: #FF1493; /* Ubah warna tombol saat hover */
-    border-color: #FF1493; /* Ganti border saat hover */
-    color: white; /* Tetap putih saat hover */
-    transform: scale(1.1); /* Efek zoom saat hover */
+    background-color: #FF1493; 
+    border-color: #FF1493; 
+    color: white;
+    transform: scale(1.1); 
 }
 
 .lihat-menu:focus {
-    outline: none; /* Hilangkan outline saat fokus */
+    outline: none; 
 }
 
 .lihat-menu:active {
-    background-color: #FF1493; /* Warna saat tombol diklik */
-    color: white; /* Teks tetap putih */
+    background-color: #FF1493; 
+    color: white; 
 }
 
 
-/* Menu Makanan */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f5f5f5;
+/* Menu Makanan & Minuman */
+.kategori-section {
+    padding: 3rem 0;
+    background-color: #1a1a1a;
+    color: white;
 }
 
 .container {
-    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 0 2rem;
 }
 
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #333;
-    font-weight: 600;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: white;
 }
 
 .menu-category {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+}
+
+
+/* Animasi Gradien Bergerak */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .sakura-border {
     position: relative;
     display: inline-block;
-    padding: 10px 20px;
-    margin-bottom: 1.5rem;
+    padding: 15px 30px;
+    margin-bottom: 2rem;
     text-align: center;
     overflow: hidden;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #8B0000, #3B1E1E, #8B0000);
+    background-size: 200% 200%;
+    animation: gradientAnimation 5s ease infinite;
+}
+
+/* Efek Kelopak Sakura yang Jatuh */
+@keyframes sakuraFall {
+    0% {
+        transform: translateY(-100%) rotate(0deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 1;
+    }
 }
 
 .sakura-border::before,
-.sakura-border::after {
+.sakura-border::after,
+.sakura-border .sakura-petal {
     content: '';
     position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 2px solid transparent;
-    box-sizing: border-box;
-    animation: sakura-border-animation 5s infinite;
+    width: 30px; 
+    height: 30px; 
+    background: url('gambar/sakura-petal.png') no-repeat center center;
+    background-size: contain;
+    animation: sakuraFall 5s linear infinite;
 }
 
 .sakura-border::before {
-    top: 0;
-    left: 0;
-    border-top-color: #ff7f7f;
-    border-right-color: #ff7f7f;
-    animation-delay: 0s;
+    top: -50px;
+    left: 50%;
+    animation-duration: 5s;
 }
 
 .sakura-border::after {
-    bottom: 0;
-    right: 0;
-    border-bottom-color: #ff7f7f;
-    border-left-color: #ff7f7f;
-    animation-delay: 2.5s;
+    top: -30px;
+    left: 30%;
+    animation-duration: 4s;
 }
 
-@keyframes sakura-border-animation {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 1;
+.sakura-border .sakura-petal {
+    top: -20px;
+    left: 70%;
+    animation-duration: 6s;
+}
+
+.sakura-border .sakura-petal:nth-child(2) {
+    left: 20%;
+    animation-delay: 2s;
+}
+
+.sakura-border .sakura-petal:nth-child(3) {
+    left: 50%;
+    animation-delay: 3s;
+}
+
+.sakura-border .sakura-petal:nth-child(4) {
+    left: 80%;
+    animation-delay: 4s;
+}
+
+@media (max-width: 768px) {
+    .sakura-border::before,
+    .sakura-border::after,
+    .sakura-border .sakura-petal {
+        width: 20px; 
+        height: 20px; 
     }
-    50% {
-        transform: scale(1.1);
-        opacity: 0.5;
+
+    @keyframes sakuraFall {
+        0% {
+            transform: translateY(-50%) rotate(0deg);
+        }
+        100% {
+            transform: translateY(100vh) rotate(360deg);
+        }
     }
 }
 
 .category-title {
-    font-size: 2rem;
-    color: #444;
+    font-size: 2.5rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 0;
+    color: white;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
 }
 
 .menu-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 2rem;
-    background: #fff;
-    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: white;
 }
 
 .menu-item:hover {
@@ -418,67 +521,80 @@ body {
 }
 
 .menu-item img {
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 300px;
     object-fit: cover;
     border-radius: 10px;
-    margin-right: 1.5rem;
-    border: 2px solid #eee;
-}
-
-.menu-details {
-    flex: 1;
+    margin-bottom: 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .menu-details h4 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
     font-weight: 600;
     text-align: left;
+    color: white;
 }
 
 .menu-details p {
-    font-size: 1rem;
-    color: #666;
-    line-height: 1.6;
+    font-size: 1.25rem;
+    line-height: 1.8;
     text-align: justify;
+    color: white;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .menu-item {
-        flex-direction: column;
-        text-align: center;
+    .menu-grid {
+        grid-template-columns: 1fr;
     }
 
     .menu-item img {
-        margin-right: 0;
-        margin-bottom: 1rem;
+        height: 250px;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .category-title {
+        font-size: 2rem;
     }
 
     .menu-details h4 {
-        font-size: 1.3rem;
-        text-align: center;
+        font-size: 1.75rem;
     }
 
     .menu-details p {
-        font-size: 0.9rem;
-        text-align: center;
+        font-size: 1.1rem;
     }
 }
-/* Kategori Makanan Section */
+
+@media (min-width: 769px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .menu-item img {
+        height: 350px;
+    }
+}
+
+
+/* Kategori Makanan & Minuman */
 .kategori-section {
     padding: 50px 0;
-    background-color: #f9f9f9;
+    background: rgba(0, 0, 0, 0.6); 
     text-align: center;
+    color: white; 
 }
 
 .section-title {
     font-size: 2.5rem;
     margin-bottom: 30px;
-    color: #333;
     font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: white; 
 }
 
 /* Swiper Container */
@@ -492,7 +608,7 @@ body {
 .flip-card {
     background-color: transparent;
     width: 100%;
-    height: 400px; /* Tinggi card diperbesar */
+    height: 400px; 
     perspective: 1000px;
     margin: 0 auto;
     cursor: pointer;
@@ -505,8 +621,8 @@ body {
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow lebih tebal */
-    border-radius: 15px; /* Border radius lebih besar */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);  
+    border-radius: 15px; 
 }
 
 .flip-card.flipped .flip-card-inner {
@@ -540,20 +656,20 @@ body {
 
 .flip-card img {
     width: 100%;
-    height: 80%; /* Gambar lebih besar */
+    height: 80%; 
     object-fit: cover;
     border-radius: 15px;
 }
 
 .flip-card h3 {
     margin: 10px 0;
-    font-size: 1.8rem; /* Ukuran font lebih besar */
+    font-size: 1.8rem; 
     font-weight: bold;
 }
 
 .flip-card p {
     padding: 0 20px;
-    font-size: 1.1rem; /* Ukuran font lebih besar */
+    font-size: 1.1rem; 
     line-height: 1.5;
 }
 
@@ -564,8 +680,8 @@ body {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 99, 132, 0.7);
     color: white;
-    width: 50px; /* Lebih besar */
-    height: 50px; /* Lebih besar */
+    width: 50px; 
+    height: 50px; 
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -609,11 +725,11 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .flip-card {
-        height: 300px; /* Tinggi card lebih kecil di mobile */
+        height: 300px; 
     }
 
     .flip-card img {
-        height: 70%; /* Gambar lebih kecil di mobile */
+        height: 70%; 
     }
 
     .section-title {
@@ -626,13 +742,13 @@ body {
     }
 
     .swiper-pagination {
-        margin-top: 10px; /* Jarak lebih kecil di mobile */
+        margin-top: 10px;
     }
 }
 
 /* Style untuk Kontak Kami */
 .contact-info {
-    background-color: #ffff; /* Lavender blush untuk latar belakang */
+    background-color: #ffff; 
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -657,15 +773,12 @@ body {
     color: #333;
 }
 
-/* Agar kontak info terlihat rapi dan responsif */
+/* Agar kontak info responsif */
 @media (max-width: 768px) {
     .contact-info {
         margin-bottom: 20px;
     }
 }
-
-
-
 
 
 /* Footer Section */
@@ -793,6 +906,9 @@ body {
     .col-md-6 {
         flex: 100%; /* Kolom penuh di mobile */
     }
+} 
+
+/* Sembunyikan elemen audio */
+audio {
+    display: none;
 }
-
-
